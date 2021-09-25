@@ -1,0 +1,76 @@
+.main-sidebar {
+    box-shadow: none !important;
+}
+
+.main-color {
+    color: #295353;
+}
+
+.bg-main {
+    background-color: #295353;
+}
+
+.text-main {
+    color: #295353;
+}
+
+.main-sidebar input,
+.main-sidebar button {
+    background-color: #295353 !important;
+}
+
+
+/* pagination custom design  */
+
+
+/* .pagination .page-item .page-link {
+    margin-left: 2px;
+    margin-right: 2px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}  */
+
+
+/* .pagination .page-item .page-link:hover {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+} */
+
+.pagination .page-item.active .page-link {
+    /* -webkit-border-radius: 50%; */
+    /* border-radius: 50%; */
+    background-color: #295353;
+    border: none;
+}
+
+
+/* nav tabs customization */
+
+#custom-tabs-two-tab li.nav-item a.nav-link {
+    color: white;
+}
+
+#custom-tabs-two-tab li.nav-item a.nav-link.active {
+    color: #295353;
+}
+
+
+/* admin row table resize row */
+
+.absen-row {
+    width: 50px !important;
+    text-align: center;
+    padding: 0px !important;
+}
+
+.table-laporan-absen-bulanan tr * {
+    vertical-align: middle !important;
+}
+
+
+/* nav link active customization */
+
+.sidebar nav ul.nav li.nav-item .nav-link.active {
+    background-color: #426161 !important;
+    color: white !important;
+}

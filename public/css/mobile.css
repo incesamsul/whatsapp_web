@@ -1,0 +1,24 @@
+@media only screen and (max-width: 600px) {
+    /* body {
+        background-color: lightblue;
+    } */
+    .img-empty-ilustration {
+        width: 200px;
+    }
+    #ask-permission .row,
+    #ask-permission .col-sm-6 {
+        margin: 0 !important;
+    }
+    #ask-permission .card {
+        height: 100vh;
+    }
+    .desktop-view {
+        display: none;
+    }
+    .mobile-logout {
+        display: block !important;
+    }
+    /* #navbarNav {
+        display: block !important;
+    } */
+}
