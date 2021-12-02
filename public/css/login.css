@@ -1,83 +1,84 @@
-html,
 body {
-    margin: 0;
-    padding: 0px;
-    height: 100vh !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #090E11;
 }
 
-.login-wrapper {
-    width: 100vw;
+.navbar-brand {
+    font-size: 14px;
+    font-weight: bold;
+    color: white !important;
+    letter-spacing: .2px;
 }
 
-.login-form-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.navbar-brand img {
+    width: 39px;
+    height: 39px;
+    margin-right: 14px;
 }
 
-.login-ilustration-wrapper {
-    background-color: #0a132b1f;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.navbar {
+    height: 100px;
+    background-color: #00BFA5 !important;
 }
 
-.btn-custom {
-    border-radius: 10px;
-    border: none !important;
-    height: 40px;
+.navbar .container {
+    margin-left: 150px;
+}
+
+#content-wrapper {
+    position: relative;
+}
+
+.hero {
+    background-color: #00BFA5;
+    height: 140px;
     width: 100%;
-    outline: none !important;
-    transition: 1s;
+    position: absolute;
+    top: 0;
 }
 
-.btn-custom:hover {
-    background-color: #0a132b;
+.landing-card {
+    color: #4A4A4F !important;
+    width: 82%;
+    margin: auto;
+    padding: 64px 60px 110px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
 }
 
-.form-custom {
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    height: 40px;
-    outline: none !important;
-    width: 100% !important;
-    transition: 1s;
-    padding: 17px;
-    color: gray
+.head-login-text {
+    font-size: 25px;
+    font-weight: lighter;
 }
 
-.form-custom:focus {
-    border: 1px solid #293453;
+.instruction-wrapper li {
+    margin-bottom: 20px;
+    font-size: 18px;
 }
 
-.text-main {
-    color: #295353;
-}
-
-.text-help p a {
-    color: #295353;
+.help-link {
+    color: #0096A5;
     text-decoration: none;
+    font-size: 14px;
+}
+
+.txt-tetap-masuk {
+    font-size: 14px;
+}
+
+input[type=checkbox] {
+    transform: scale(0.9);
+}
+
+#loading {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
 }
 
 .bg-main {
-    color: white;
-    background-color: #295353;
-}
-
-.fs-small {
-    font-size: 12px;
-}
-
-@media only screen and (max-width: 600px) {
-    .login-ilustration-wrapper {
-        display: none;
-    }
-    .login-form-wrapper {
-        padding: 15px !important;
-    }
+    background-color: #0096A5;
 }

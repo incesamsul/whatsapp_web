@@ -1,45 +1,49 @@
-<!doctype html>
-<html lang="en-US" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:addthis="https://www.addthis.com/help/api-spec" prefix="og: http://ogp.me/ns#" class="no-js">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>Qrcode Login</title>
-    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/scan.css') }}">
-    <link rel="stylesheet" href="{{ asset('AdminLTE-3.1.0/plugins/fontawesome-free/css/all.css') }}">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- scanner -->
+    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <title>Scan Page</title>
 </head>
 
 <body>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-    <div class="container-fluid bg-primary">
-        <div class="row bg-black">
-
-
-            <div class="col">
-                <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-
-                <div class="col-sm-12 cam-vid-wrapper">
-                    <video id="preview" class="p-1 border" style="width:100%;"></video>
-                </div>
-
-                <div class="cam-design-wrapper">
-                </div>
-                <div class="bottom-capt">
-                    <h5><i class="fas fa-qrcode"></i> QRCODE LOGIN</h5>
-                </div>
-                <div class="cam-frame">
-                    <h5><i class="fas fa-qrcode"></i> QRCODE LOGIN</h5>
-                </div>
-
-                <script type="text/javascript">
-                    var scanner = new Instascan.Scanner({
+    <div id="content-wrapper">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <i class="fas fa-arrow-left"></i><span class="ms-4"> Pindai kode QR</span>
+                </a>
+            </div>
+        </nav>
+        <section id="scan-instruction">
+            Untuk menggunakan Whatsapp web buka web.whatsapp.com pada komputer Anda
+        </section>
+        <section id="camera-wrapper">
+            <video id="preview" class="p-1 border" style="width:100%;"></video>
+            <div class="scan-area"></div>
+            <div class="top left"></div>
+            <div class="top right"></div>
+            <div class="bottom right"></div>
+            <div class="bottom left"></div>
+        </section>
+    </div>
+    <script>
+        var scanner = new Instascan.Scanner({
                         video: document.getElementById('preview'),
                         scanPeriod: 5,
                         mirror: false
@@ -48,21 +52,22 @@
                     let password = @json(auth()->user()->password);
                     scanner.addListener('scan', function(content) {
                         console.log(content);
-                        if(content.length !== 13){
+                        if(content.length !== 50){
                             alert('qrcode tidak valid');
                         } else {
                             $.ajax({
                             headers: {
                                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                             },
-                            url: '/Qrcodelogin/public/ajax/login-qrcode',
+                            url: '/whatsapp_web/public/ajax/login-qrcode',
                             data:{token:content,username:username,password:password},
                             method: 'post',
                             success: function(data){
                                 console.log(data);
                                 // alert("Login Berhasil ... ");
-                                window.location.href = '/Qrcodelogin/public/kasir';
-
+                                window.location.href = '/whatsapp_web/public/kasir';
+                            },error:function(err){
+                                console.log(err);
                             }
                         });
                         }
@@ -94,23 +99,7 @@
                         console.error(e);
                         alert(e);
                     });
-                </script>
-                {{-- <div class="btn-group btn-group-toggle mb-5" data-toggle="buttons">
-                    <label class="btn btn-primary active">
-					<input type="radio" name="options" value="1" autocomplete="off" checked> Front Camera
-				  </label>
-                    <label class="btn btn-secondary">
-					<input type="radio" name="options" value="2" autocomplete="off"> Back Camera
-				  </label>
-                </div> --}}
-            </div>
-
-
-
-
-        </div>
-    </div>
-
+    </script>
 </body>
 
 </html>

@@ -11,7 +11,6 @@ $(document).ready(function() {
     let kondisi = false;
     let statuskerja = false;
 
-
     // mengatur animasi dan mengisi inputan data kondisi
     $('.icon-kondisi .icon-kondisi-items i').on('click', function(e) {
             if (document.querySelector('.icon-kondisi .icon-kondisi-items i.clicked') !== null) {

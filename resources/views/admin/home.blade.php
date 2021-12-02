@@ -1,3 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <title>home</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-sm-12 d-flex justify-content-center align-items-center flex-column text-white">
+                <p>Tidak ada apapun disini </p>
+                <p>tidak ada chat masuk :/ </p>
+                <img src="{{ asset('img/img/petrik.jpg') }}" alt="" width="300">
+                <a href="{{ URL::to('/logout') }}" class="btn bg-main text-white mt-3">logout</a>
+            </div>
+        </div>
+    </div>
+</body>
 <script>
     window.mobileCheck = function() {
     let check = false;
@@ -5,5 +36,8 @@
     return check;
     };
 
-    window.mobileCheck() ? window.location.href = '/whatsapp_web/public/login-biasa' : window.location.href = '/whatsapp_web/public/login';
+    window.mobileCheck() ? window.location.href = '/whatsapp_web/public/scan-qrcode' : '';
 </script>
+
+</html>
+
