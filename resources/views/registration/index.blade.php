@@ -21,18 +21,11 @@
             <div class="pb-5 col-sm-12 d-flex align-items-center flex-column bg-ilustration">
                 <h3 class="text-center text-main mt-5">
                     wASap
-                    <div class="alert-alert-info">
-                        @if (session('message'))
-                        <div class="alert alert-info">
-                            {{ session('message') }}
-                        </div>
-                        @endif
-                    </div>
                 </h3>
                 <div class="card login-card mt-5 border-0">
-                    <h4 class="mt-3 mb-5">Masuk</h4>
+                    <h4 class="mt-3 mb-5">Register</h4>
                     <div class="mb-3">
-                        <form action="{{ URL::to('/postlogin') }}" method="POST">
+                        <form action="{{ URL::to('/postRegister') }}" method="POST">
                             @csrf
                             <p class="text-danger">{{ session('fail') }}</p>
                             <label for="username" class="form-label text-secondary fw-bold small">Username atau Email</label>
@@ -43,11 +36,11 @@
                         <input autocomplete="off" type="password" class="form-custom" id="password" placeholder="" name="password">
                     </div>
                     <div class="mb-3">
-                        <button type="submit" name="login" class="btn-custom bg-main">Masuk</button>
+                        <button type="submit" name="login" class="btn-custom bg-main">Register</button>
                         </form>
                     </div>
                     <div class="text-help">
-                        <p class="text-secondary text-center fs-small">Belum punya akun<a href="{{ URL::to('/registration') }}"> Register?</a></p>
+                        <p class="text-secondary text-center fs-small">sudah punya akun<a href="{{ URL::to('/login-biasa') }}"> Login?</a></p>
                     </div>
 
                 </div>

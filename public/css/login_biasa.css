@@ -1,0 +1,71 @@
+html,
+body {
+    margin: 0;
+    padding: 0px;
+}
+
+.login-card {
+    width: 400px !important;
+    padding: 20px 40px 20px 40px;
+    box-shadow: .1px .10px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    margin-bottom: 100px;
+}
+
+.btn-custom {
+    border-radius: 10px;
+    border: none !important;
+    height: 40px;
+    width: 100%;
+    outline: none !important;
+    transition: 1s;
+}
+
+.btn-custom:hover {
+    background-color: #0a132b;
+}
+
+.form-custom {
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 40px;
+    outline: none !important;
+    width: 100% !important;
+    transition: 1s;
+    padding: 17px;
+    color: gray
+}
+
+.form-custom:focus {
+    border: 1px solid #293453;
+}
+
+.text-main {
+    color: #293453;
+}
+
+.bg-main {
+    color: white;
+    background-color: #293453;
+}
+
+.fs-small {
+    font-size: 12px;
+}
+
+.bg-ilustration {
+    background: url(/img/bg2.svg) no-repeat;
+    background-position: 200px -20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .login-card {
+        padding: 0px 10px 0px 10px;
+        width: 100% !important;
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .bg-ilustration {
+        background: none;
+    }
+}

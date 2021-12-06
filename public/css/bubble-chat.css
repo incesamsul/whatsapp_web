@@ -1,0 +1,125 @@
+/* General CSS Setup */
+
+body {
+    font-family: "Ubuntu-Italic", "Lucida Sans", helvetica, sans;
+}
+
+
+/* container */
+
+.container {
+    padding: 5% 5%;
+}
+
+
+/* CSS talk bubble */
+
+.talk-bubble {
+    margin-bottom: 5px !important;
+    margin-bottom: 10px !important;
+    margin-left: 40px;
+    margin-right: 40px;
+    display: inline-block;
+    position: relative;
+    /* width: 700px; */
+    max-width: 500px;
+    min-width: 200px;
+    height: auto;
+    font-size: 14px;
+}
+
+.talk-bubble.right {
+    align-self: end;
+    background-color: #056162;
+    color: #E2DFC5;
+}
+
+.talk-bubble.left {
+    align-self: start;
+    color: #E2DFC5;
+    background-color: #262D31;
+}
+
+.border {
+    border: 8px solid #666;
+}
+
+.round {
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+}
+
+
+/* Right triangle placed top left flush. */
+
+.tri-right.border.left-top:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -40px;
+    right: auto;
+    top: -8px;
+    bottom: auto;
+    border: 32px solid;
+    border-color: #666 transparent transparent transparent;
+}
+
+.tri-right.left-top:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -19px;
+    right: auto;
+    top: 0px;
+    bottom: auto;
+    border: 22px solid;
+    border-color: #262D31 transparent transparent transparent;
+}
+
+
+/* Right triangle placed top right flush. */
+
+.tri-right.border.right-top:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    right: -40px;
+    top: -8px;
+    bottom: auto;
+    border: 32px solid;
+    border-color: #666 transparent transparent transparent;
+}
+
+.tri-right.right-top:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    right: -14px;
+    top: 1px;
+    bottom: auto;
+    border: 20px solid;
+    border-color: #056162 transparent transparent transparent;
+    color: #E2DFC5;
+}
+
+
+/* talk bubble contents */
+
+.talktext {
+    padding: 1em;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.talktext p {
+    /* remove webkit p margins */
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+}

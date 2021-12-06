@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #0D1418;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #090E11;
+}
+
+.content-wrapper {
+    width: 1366.2px;
+    height: 100vh;
+    margin: 0px auto;
+}
+
+.list-friend-segment {
+    background-color: #131C21;
+    width: 408px;
+    border-right: 1px solid #394045;
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.waktu-chat-masuk {
+    font-size: 12px !important;
+}
+
+.list-friend {
+    /* cursor: pointer; */
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    border-bottom: 1px solid #394045;
+    width: 100%;
+}
+
+.profile-wrapper {
+    background-color: #2A2F32;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 59px;
+    padding: 10px 16px;
+    color: #B1B3B5;
+    width: 100%;
+}
+
+.search-wrapper {
+    height: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7F7678;
+}
+
+.form-search {
+    padding: 0px 32px 0px 15px;
+    border-radius: 90px;
+    background-color: #323739;
+    width: 93%;
+    font-size: 14px;
+}
+
+.form-search input {
+    background-color: transparent;
+    border: none;
+    padding: 7px;
+    outline: none;
+    color: inherit;
+    margin-left: 20px;
+}
+
+.action-wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 140px;
+    font-size: 20px;
+}
+
+.profile-pict {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.profile-pict-lg {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+}
+
+.friend-wrapper {
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+}
+
+.friend-wrapper:hover {
+    background-color: #323739;
+}
+
+.friend-img {
+    height: 72px;
+    width: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.friend-chat {
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid #394045;
+}
+
+.chat-wrapper {
+    width: 331px;
+}
+
+.chat-wrapper p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 280px;
+}
+
+.name-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+.waktu-chat-masuk,
+.chat-terbaru {
+    color: #9DA196 !important;
+}
+
+.text-small {
+    font-size: 14px;
+}
+
+.chat-segment {
+    /* height: 100%; */
+    position: fixed;
+    margin-left: 408px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    background-color: #0D1418;
+    height: 100vh;
+}
+
+.round-image {
+    border-radius: 50%;
+}
+
+.img-230px {
+    width: 230px;
+    height: 230px;
+}
+
+.welcome-wrapper {
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    color: #B1B3B5;
+    text-align: center;
+}
+
+.welcome-text {
+    font-size: 30px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.divider {
+    width: 100%;
+}
+
+.no-border {
+    border: none;
+}
+
+.chat-content {
+    margin-bottom: 62px;
+    /* cursor: pointer; */
+    overflow: hidden;
+    overflow-y: auto;
+    width: 956.2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100vh;
+}
+
+.chat-input-wrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 62px;
+    background-color: #1E2428;
+    color: #7F7678;
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.round-input {
+    border-radius: 90px;
+    border: none;
+    outline: none;
+    color: #FFFFFF;
+    font-size: 14px;
+    background-color: #33383B;
+    padding: 12px 5px 12px 15px;
+    width: 80%;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #131C21;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #394045;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #394045;
+}

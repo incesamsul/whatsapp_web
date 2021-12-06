@@ -35,9 +35,9 @@ class Authentication extends Controller
 
 
         if ($user) {
-            if (password_verify(md5($request->password), $user->password)) {
+            if (password_verify($request->password, $user->password)) {
                 Auth::login($user);
-                return redirect('/kasir');
+                return redirect('/main');
             } else {
                 return redirect('/login-biasa')->with('fail', 'Password yang anda masukan salah');
             }
