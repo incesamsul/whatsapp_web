@@ -63,7 +63,8 @@ class UserController extends Controller
             $data['friend'] = DB::table('users')
                 ->Where('id', $request->idFriend)
                 ->first();
-            return view('chat.data_chat', $data)->render();
+            return $data;
+            // return view('chat.data_chat', $data)->render();
         }
     }
 }

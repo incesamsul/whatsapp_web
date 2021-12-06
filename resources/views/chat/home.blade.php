@@ -69,9 +69,7 @@
         <div class="profile-wrapper">
           <div class="img-profile">
             <img src="{{ asset('img/user_img/1.jpg') }}" alt="" class="profile-pict">
-            @if (isset($friend))
-            <span class="p-3">{{ $friend->name }}</span>
-          @endif
+            <span class="p-3" id="friend-name">your friend name</span>
           </div>
           <div class="action-wrapper">
             <i></i>
@@ -82,7 +80,17 @@
         </div>
       </div>
       <div class="chat-bubble-wrapper">
-          @include('chat.data_chat')
+        <div class="chat-content">
+            @foreach ($chat as $row)
+            <div class="talk-bubble tri-right round {{ $row->id_pengirim == auth()->user()->id ? 'right-top right' : 'left-top left' }}">
+                <div class="talktext">
+                  <p>{{ $row->pesan }}</p>
+                </div>
+            </div>
+
+            @endforeach
+          </div>
+
       </div>
       <div class="chat-input-wrapper ">
         <i class="far fa-laugh-squint"></i>
@@ -129,7 +137,16 @@
         $.ajax({
             url: "/user/fetch_data_chat?idFriend=" + idFriend
             , success: function(data) {
-                $('.chat-bubble-wrapper').html(data);
+                $('#friend-name').html(data.friend.name)
+                $('#id_penerima').val(data.friend.id)
+                for(i in data.chat){
+                    let chatContent = '<div class="talk-bubble tri-right round right-top right">'
+               chatContent+= '<div class="talktext">'
+               chatContent+=   '<p></p>'
+              chatContent+=  '</div>'
+           chatContent+= '</div>'
+                }
+                console.log(data);
             }
             , error: function(err) {
                 console.log(err);
