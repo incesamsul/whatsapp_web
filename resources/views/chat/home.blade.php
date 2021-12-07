@@ -80,11 +80,8 @@
                 </div>
             </div>
             <div class="chat-bubble-wrapper">
-                <div class="chat-content">
-
-
-                </div>
-
+            </div>
+            <div class="chat-content">
             </div>
             <div class="chat-input-wrapper ">
                 <i class="far fa-laugh-squint"></i>
@@ -124,7 +121,9 @@
 
             setInterval(() => {
                 let idPenerima = $('#id_penerima').val();
-                fetchDataChat(idPenerima);
+                if(idPenerima !== ""){
+                    fetchDataChat(idPenerima);
+                }
             }, 3000);
 
             function fetchDataChat(idFriend) {
