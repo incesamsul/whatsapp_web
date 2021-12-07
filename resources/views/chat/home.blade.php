@@ -68,7 +68,7 @@
             <div class="sidebar-header no-border fixed ">
                 <div class="profile-wrapper">
                     <div class="img-profile">
-                        <img src="{{ asset('img/user_img/1.jpg') }}" alt="" class="profile-pict">
+                        <img src="{{ asset('img/user_img/1.jpg') }}" data-assets="{{ asset('') }}" alt="" class="profile-pict" id="profile-img">
                         <span class="p-3" id="friend-name">your friend name</span>
                     </div>
                     <div class="action-wrapper">
@@ -116,15 +116,16 @@
                         }
                         , success: function(data) {
                             fetchDataChat(idPenerima);
+                            $('#pesan').val('');
                         }
                     })
                 }
             })
 
-            // setInterval(() => {
-            //     let idPenerima = $('#id_penerima').val();
-            //     fetchDataChat(idPenerima);
-            // }, 3000);
+            setInterval(() => {
+                let idPenerima = $('#id_penerima').val();
+                fetchDataChat(idPenerima);
+            }, 3000);
 
             function fetchDataChat(idFriend) {
                 let userLogId = $('#user-log-id').val();
@@ -133,6 +134,9 @@
                     , success: function(data) {
                         $('#friend-name').html(data.friend.name)
                         $('#id_penerima').val(data.friend.id)
+                        let assetPath = $('#profile-img').data('assets');
+
+                        $('#profile-img').attr('src',assetPath + 'img/user_img/' + data.friend.foto + '.jpg' )
                         for (i in data.chat) {
                             let bubleChatType = '';
                             if (data.chat[i].id_pengirim == userLogId) {
@@ -146,8 +150,19 @@
                             chatContent += '<p>' + data.chat[i].pesan + '</p>';
                             chatContent += '</div>';
                             chatContent += '</div>';
-                            console.log(chatContent);
-                            $('.chat-content').append(chatContent);
+                            // console.log(chatContent);
+                            $('.chat-content').append(chatContent)
+                        }
+                        cleanChat();
+                        function cleanChat(){
+                            for(var i = 0; i<$('.chat-content .talk-bubble').length; i++){
+                                for(var j = 0; j<$('.chat-content .talk-bubble').length; j++){
+                                    console.log($('.chat-content .talk-bubble').eq(i).html())
+                                    if($('.chat-content .talk-bubble').eq(i).html() == $('.chat-content .talk-bubble').eq(j).html() && i != j){
+                                        $('.chat-content .talk-bubble').eq(j).remove();
+                                    }
+                                }
+                            }
                         }
                         //console.log(data.chat);
                     }
@@ -159,6 +174,7 @@
 
             $(document).on('click', '.friend-wrapper', function() {
                 let idFriend = $(this).data('id_friend');
+                $('.chat-content').html('');
                 fetchDataChat(idFriend);
             })
 
