@@ -203,12 +203,13 @@ body {
 
 .chat-content {
     margin-bottom: 62px;
+    padding-bottom: 120px;
     /* cursor: pointer; */
     overflow: hidden;
     overflow-y: auto;
     width: 956.2px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: end;
     height: 100vh;
 }
